@@ -45,5 +45,9 @@ class ConverterTests: XCTestCase {
         let result = converter.convert(6)
         XCTAssertEqual(result, "VI", "Conversion for 6 is incorrect")
     }
-
+    
+    func testConversionForSeven() {
+        let result = converter.convert(7)
+        XCTAssertEqual(result, "VII", "Conversion for 7 is incorrect")
+    }
 }
