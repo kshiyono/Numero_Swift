@@ -29,8 +29,8 @@
 class Converter {
     func convert(_ number: Int) -> String {
         
-        if number % 5 == 0 {
-            return "V"
+        if number >= 5 {
+            return "V" + String(repeating: "I", count: number % 5)
         } else {
             return String(repeating: "I", count: number)
         }
