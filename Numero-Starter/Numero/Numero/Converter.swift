@@ -29,7 +29,7 @@
 class Converter {
     func convert(_ number: Int) -> String {
         if number >= 10 {
-            return "X" + String(repeating: "I", count: number % 5)
+            return String(repeating: "X", count: number / 10) + String(repeating: "I", count: number % 5)
         } else if number >= 5 {
             return "V" + String(repeating: "I", count: number % 5)
         } else {
