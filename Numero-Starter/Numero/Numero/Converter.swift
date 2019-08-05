@@ -36,6 +36,10 @@ class Converter {
             returnNumber += "X"
             localNumber  -= 10
         }
+        if localNumber == 9 {
+            returnNumber += "IX"
+            localNumber  -= 9
+        }
         while localNumber >= 5 {
             returnNumber += "V"
             localNumber  -= 5
