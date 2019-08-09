@@ -36,7 +36,7 @@ class Converter {
             returnNumber += "X"
             localNumber  -= 10
         }
-        if localNumber == 9 {
+        while localNumber >= 9 {
             returnNumber += "IX"
             localNumber  -= 9
         }
@@ -45,10 +45,14 @@ class Converter {
             localNumber  -= 5
         }
         
-        if localNumber == 4 {
+        while localNumber >= 4 {
             returnNumber += "IV"
-        } else {
-            returnNumber += String(repeating: "I", count: localNumber / 1)
+            localNumber  -= 4
+        }
+        
+        while localNumber >= 1 {
+            returnNumber += "I"
+            localNumber = localNumber - 1
         }
         
         return returnNumber
