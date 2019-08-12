@@ -80,4 +80,9 @@ class ConverterTests: XCTestCase {
         let result = converter.convert(29)
         XCTAssertEqual(result, "XXIX", "Conversion for 29 is incorrect")
     }
+    
+    func testConverstionForZero() {
+        let result = converter.convert(0)
+        XCTAssertEqual(result, "", "Conversion for 0 is incorrect")
+    }
 }
