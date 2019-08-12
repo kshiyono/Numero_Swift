@@ -28,33 +28,23 @@
 
 class Converter {
     func convert(_ number: Int) -> String {
-        
-        var returnNumber = ""
         var localNumber = number
+        var result = ""
         
-        while localNumber >= 10 {
-            returnNumber += "X"
-            localNumber  -= 10
-        }
-        while localNumber >= 9 {
-            returnNumber += "IX"
-            localNumber  -= 9
-        }
-        while localNumber >= 5 {
-            returnNumber += "V"
-            localNumber  -= 5
-        }
+        let numberSymbols: [(number: Int, symbol: String)] =
+            [(10, "X"),
+             (9, "IX"),
+             (5, "V"),
+             (4, "IV"),
+             (1, "I")]
         
-        while localNumber >= 4 {
-            returnNumber += "IV"
-            localNumber  -= 4
+        for item in numberSymbols {
+            while localNumber >= item.number {
+                result += item.symbol
+                localNumber = localNumber - item.number
+            }
         }
         
-        while localNumber >= 1 {
-            returnNumber += "I"
-            localNumber = localNumber - 1
-        }
-        
-        return returnNumber
+        return result
     }
 }
